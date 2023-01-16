@@ -2,7 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { TokenModel, connect } = require("./db");
-const { auth } = require("./auth.middleware");
+// const { auth } = require("./auth.middleware");
 const cors = require("cors");
 const server = express();
 server.use(cors({ origin: "*" }));
@@ -57,7 +57,7 @@ server.post("/login", async (req, res) => {
     res.send(error);
   }
 });
-server.use(auth);
+// server.use(auth);
 server.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
 
